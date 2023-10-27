@@ -96,9 +96,11 @@ void display()
     printf("\nElements of queue: ");
     for (i = front; i != rear; i = (i + 1) %max) 
      {
-	printf("%d ", a[i]);
+     	printf("%d ", a[i]);
      }
-	printf("%d ", a[i]);   
+     printf("%d ", a[i]);
+     printf("\nFront positions at %d \n", front);
+      printf("\nRear positions at %d \n", rear);
    }
   printf("\n");
  }
