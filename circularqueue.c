@@ -98,6 +98,7 @@ void display()
      {
 	printf("%d ", a[i]);
      }
+	printf("%d ", a[i]);   
    }
   printf("\n");
  }
