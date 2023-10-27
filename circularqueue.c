@@ -38,25 +38,29 @@ void main()
 	  printf("Invalid choice\n");
 	 }
 	}
-     } while(choice!=5);
+     } while(choice!=4);
  }
 void enqueue()
  {
    int val;
-   printf("Enter the value to be added\n");
-   scanf("%d",&val);
-   if(front==-1&&rear==-1)
+   
+   if(front==(rear+1)%max)
      {
+	printf("OVERFLOW\n");
+     }
+   else if(front==-1&&rear==-1)
+     {
+	printf("Enter the value to be added\n");
+   scanf("%d",&val);
 	front=0;
 	rear=0;
 	a[rear]=val;
      }
-   else if(front==(rear+1)%max)
-     {
-	printf("OVERFLOW\n");
-     }
+   
    else
      {
+       printf("Enter the value to be added\n");
+   scanf("%d",&val);
        rear=(rear+1)%max;
        a[rear]=val;
      }
@@ -89,12 +93,11 @@ void display()
   printf("Empty Circular Queue, no elements to display\n");
   else 
    {
-    printf("\Elements of queue: ");
+    printf("\nElements of queue: ");
     for (i = front; i != rear; i = (i + 1) %max) 
      {
 	printf("%d ", a[i]);
      }
-    printf("%d ", a[i]);
    }
   printf("\n");
  }
